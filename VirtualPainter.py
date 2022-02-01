@@ -6,7 +6,8 @@ import numpy as np
 import os
 
 folder_path = 'Header'
-my_list = os.listdir(folder_path)
+my_list = sorted(os.listdir(folder_path))
+print(my_list)
 overlay_list = []
 for im_path in my_list:
     image = cv2.imread(f'{folder_path}/{im_path}')
@@ -21,7 +22,7 @@ y_prev = 0
 cam_width, cam_height = 1280, 720
 prev_time = 0
 
-detector = htm.HandDetector(detect_confidence=0.8)
+detector = htm.HandDetector()
 
 cap = cv2.VideoCapture(0)
 cap.set(3, cam_width)
@@ -29,7 +30,7 @@ cap.set(4, cam_height)
 
 while True:
     success, img = cap.read()
-    if not success:  # Don't know why but sometimes cv2 can't convert BGR image to RGB in find_hands function
+    if not success:
         print("Ignoring empty camera frame. If this message continues to appear, please restart the program")
         continue
     img = cv2.flip(img, 1)
