@@ -6,14 +6,15 @@ import time
 
 
 class HandDetector():
-    def __init__(self, mode=False, max_hands=2, detect_confidence=0.5, tracking_confidence=0.5):
+    def __init__(self, mode=False, max_hands=2, model_complexity=1, detect_confidence=0.5, tracking_confidence=0.5):
         self.mode = mode
         self.max_hands = max_hands
+        self.model_complexity = model_complexity
         self.detect_confidence = detect_confidence
         self.tracking_confidence = tracking_confidence
 
         self.mp_hands = mp.solutions.hands
-        self.hands = self.mp_hands.Hands(self.mode, self.max_hands, self.detect_confidence, self.tracking_confidence)
+        self.hands = self.mp_hands.Hands(self.mode, self.max_hands, self.model_complexity, self.detect_confidence, self.tracking_confidence)
         self.mp_draw = mp.solutions.drawing_utils
 
         self.tip_ids = [4, 8, 12, 16, 20]
