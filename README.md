@@ -6,11 +6,11 @@ In the top of image from your webcam you see a header with 7 different colours a
 
 ![header](Header/1.png)
 
-To pick a colour pick up your forefinger and middle finger together and point them at chosen colour as below.
+To pick a colour pick up your forefinger and middle finger together as below.
 
 ![two_fingers](two_fingers.jpeg)
 
-This colour will highlight a bit as below.
+Then point them at chosen colour. This colour will highlight a bit as below.
 
 ![header4](Header/5.png)
 
